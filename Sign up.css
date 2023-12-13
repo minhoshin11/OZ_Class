@@ -1,0 +1,51 @@
+*{
+    margin: 13px;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    
+}
+
+ul,li{
+    display: center;
+    list-style: none;
+    align-items: center;
+}
+
+
+
+body{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.signup{
+
+    width: 300px;
+    height: 800px;
+    position: relative;
+}
+
+.web{
+
+        width: 500px; 
+        height: 700px;
+        padding: 20px;
+        border: 1px solid #8EF78B;
+        border-radius: 20px 20px 20px 20px;
+        background-color: #EBFFEB ;
+        margin-top: 60px;
+        box-shadow: 5px 5px 0px #15EF0D,
+                    10px 10px 0px #ce6fed, 
+                    15px 15px 0px #9489dd,
+                    20px 20px 0px #2582aa;
+
+}
+
+#end{
+    
+}
+
