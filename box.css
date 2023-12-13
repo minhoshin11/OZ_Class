@@ -1,0 +1,21 @@
+#outer-box{
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, blue , red , yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#inner-box{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border: 5px solid skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+#text{color:skyblue;}
