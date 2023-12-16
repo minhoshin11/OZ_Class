@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>셀렉트</title>
+  <style>
+.box{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.table {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+  }
+  .table tr {
+    display: flex;
+  }
+
+  .table th,
+  .table td {
+    flex: 1;
+    border: 1px solid #000;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <div class="box">
+   <table class="table">
+      <tr>
+        <th>이름</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>짱구</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td>맹구</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>철수</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>훈이</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>유리</td>
+        <td>68</td>
+      </tr>
+      <tr>
+        <td>수지</td>
+        <td>86</td>
+      </tr>
+    </table>
+    <div id="ee"></div>
+  </div>
+<script>
+  const table = document.querySelector('.table'); // class table에 첫번재 요소를 선택함.
+  const rows = table.querySelectorAll('tr'); //table에 모든 tr을 선택함.
+
+  for (let i = 1; i < rows.length; i++) {
+  // 각 행의 마지막 열(점수)에서 숫자 값을 가져옵니다.
+  const score = parseInt(rows[i].querySelector('td:last-child').textContent);
+
+  // 만약 점수가 75보다 크면 실행됩니다.
+  if (score >= 75) {
+    // 해당 행의 첫 번째 열(이름)에서 텍스트 값을 가져옵니다.
+    const name = rows[i].querySelector('td:first-child').textContent;
+
+    // 가져온 이름을 포함한 텍스트 노드를 생성합니다.
+    const textNode = document.createTextNode(name + ' ');
+
+    // 'ee'라는 ID를 가진 요소에 위에서 생성한 텍스트 노드를 추가합니다.
+    document.getElementById('ee').appendChild(textNode);
+  }
+}
+</script>
+</body>
+
+</script>
+
+
+</body>
+</html>
