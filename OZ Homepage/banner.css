@@ -1,7 +1,7 @@
 .banner{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
     box-sizing: border-box;
     font-size: 1.5rem;
     background-color: black;
@@ -11,15 +11,15 @@
     top: 0px;
     margin: 0;
     padding: 0;
-    
 }
 
 .banner h2.left-banner{
-    margin-right:auto ;
-    margin-left: 50px;
     justify-content: center;
+    margin-left: 50px;
     padding: 0;
+    margin-top: 30px;
 }
+
 
 .banner ul{
     list-style-type: none;
@@ -36,10 +36,11 @@
     box-sizing: border-box;
     margin-right: 60px;
     margin-top: auto;
+    cursor: pointer;
 }
 .left-banner{
     display: flex;
-    
+    cursor: pointer;
 }
 
 .banner li{
@@ -47,3 +48,40 @@
     margin: auto;
     }
 
+    .icon-menu{
+        display: none;
+        position: relative;
+        border-radius: 30px;
+        box-sizing: border-box;
+        width: 500px;
+        height: auto;
+        color: white;
+        background-color: black;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hidden-content{
+        display: none;
+        background-color: #585858;
+        height: 170px;
+    }
+
+    .hidden-content ul{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        list-style-type: none;
+        color: white;
+        font-size: 1.3rem;
+        justify-content:center;
+        text-align: center;
+        gap: 35px;
+        margin-top: 15px;
+        margin-left: 55px;
+
+    }
+    .hidden-content li{
+    width: auto;
+    height: 10px;
+    }

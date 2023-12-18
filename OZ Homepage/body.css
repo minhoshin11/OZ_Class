@@ -4,8 +4,15 @@ html{
     font-weight: 1.3rem;
     position: relative;
     overflow: visible;
-
 }
+
+a{
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit; /* 방문한 링크의 색을 상위 요소의 색으로 상속 */
+  }
 body, html {
     margin: 0;
     padding: 0;
@@ -18,15 +25,17 @@ body, html {
     flex-direction: column;
     text-align: center;
     width: 100%; 
-    height: ;
-    margin-top: 150px;
+    height: auto;
+    margin-top: 250px;
     gap: 30px;
 }
+
+
 
 .Button{
     display: flex;
     margin-top: 200px;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 40px;
 }
 
@@ -36,14 +45,19 @@ body, html {
     border: 1px solid purple;
     background-color: purple;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     border-radius: 40px;
+    border: none;
+    transform: 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 20px;
+    margin: auto;
+    cursor: pointer;
+    
 }
 
 
@@ -86,3 +100,78 @@ body::before {
     background-size: cover; /* 이미지 크기 조절 */
     background-repeat: no-repeat; /* 이미지 반복 없음 */
     /* 다른 이미지 스타일 조정 가능 */}
+
+
+.hidden-content{
+    display: none;
+    position: absolute;
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+    width: 450px;
+    height: auto;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgb(30, 26, 26);
+    z-index: 10;
+    top: 30px;
+    right: 0px;
+}
+
+.hidden-content ul{
+    color: white;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.hidden-content li{
+    width: 450px;
+    height: 40px;
+    cursor: pointer;
+    align-items: center;
+    
+}
+
+.right-banner li:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-decoration-color: #8A2BE2;
+}
+
+.button1:hover {
+    animation: shake 2s ease-in-out infinite; 
+    /* hover 시 애니메이션 적용 */}
+.button2:hover {
+    animation: shake 2s ease-in-out infinite; 
+    /* hover 시 애니메이션 적용 */}
+.button3:hover {
+    animation: shake 2s ease-in-out infinite; 
+    /* hover 시 애니메이션 적용 */}
+
+
+    @media screen and (max-width: 769px){
+        .right-banner ul{
+        display: none;
+        }
+        .icon-menu{
+            display: block;
+            position: relative;
+            justify-content: center;
+            width: auto;
+            margin: 0;
+            padding: 0;
+            margin-top: 30px;
+            margin-right: 20px;
+        }
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); } /* 시작 지점 */
+        25% { transform: translateX(-3px) rotate(-3deg); } /* 약간의 왼쪽으로 이동 */
+        50% { transform: translateX(3px) rotate(3deg); } /* 약간의 오른쪽으로 이동 */
+        75% { transform: translateX(-3px) rotate(-3deg); } /* 다시 왼쪽으로 이동 */
+        100% { transform: translateX(0); } /* 원래 위치로 돌아옴 */
+      }

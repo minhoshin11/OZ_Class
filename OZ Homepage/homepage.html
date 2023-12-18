@@ -8,44 +8,75 @@
     <link rel="stylesheet" href="body.css">
 </head>
 <body>
+    <section>
 <head>
-
-    
     <div class="banner">
+    <a href="http://127.0.0.1:5500/OZ%20Homepage/homepage.html">
         <h2 class="left-banner">OZ</h2>
-        <nav class="right-banner">
+    </a >
+    <nav class="right-banner">
         <ul>
             <li>오즈코딩스쿨</li>
             <li>html</li>
             <li>css</li>
             <li>커리큘럼</li>
             <li>문의사항</li>
-        </ul>
         </nav>
+        </ul>
+        <div class="icon-menu" id="menu">
+            <input type="button" value="MENU" id="menu-box">
+            <nav class="hidden-content" id="hidden">
+                <ul>
+                    <li>오즈코딩스쿨</li>
+                    <li>html</li>
+                    <li>css</li>
+                    <li>커리큘럼</li>
+                    <li>문의사항</li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </head>
-    <main>
-        <div class="big">
+<main>
+    <div class="big">
         <h2>ABOUT</h2>
         <h1>OZ코딩스쿨</h1>
-        </div>
-        <div class="Button">
+    </div>
+    <div class="Button">
+        <a href="https://ozcodingschool.com/ozcoding/startupcamp">
         <button class="button1">
             <div class="button1-image"></div>
             <div>빠른 강의</div> 
         </button>
-
+            </a>
+        <a href="https://ozcodingschool.com/mypage/classList">
         <button class="button2">
             <div class="button2-image"></div>
             <div>손쉬운 학습</div> 
         </button>
-
+        </a>
+        <a href="https://ozcodingschool.com/ozcoding/oznightschool">
         <button class="button3">
             <div class="button3-image"></div>
             <div>플레이 그라운드</div> 
         </button>
-        </div>
-    </main>
-    <div></div>
+    </a>
+    </div>
+</main>
+</section>
+<script>
+    // JavaScript를 사용하여 버튼을 클릭했을 때 동작을 추가합니다.
+    document.getElementById('menu').addEventListener('click', function() {
+        var myDiv = document.getElementById('hidden');
+        
+          // 현재 display 상태를 확인하여 토글링합니다.
+          if (myDiv.style.display === 'none' || myDiv.style.display === '') {
+            myDiv.style.display = 'block'; // 보이는 상태로 변경
+          } else {
+            myDiv.style.display = 'none'; // 숨김 상태로 변경
+          }
+        });
+      </script>
+
 </body>
 </html>
