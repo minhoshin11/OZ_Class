@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹 만들기</title>
+    <style>
+    html{
+        margin-top:250px;
+        background-color: green;
+    }
+    h2{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color:white;
+    }    
+    .texts {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color:white;
+    }
+    .texts ul{
+        margin-left: -40px;
+        font-size: 1.5rem;
+        visibility: hidden;
+        list-style-type: none;
+        }
+        
+    @media screen and (max-width: 80000px) and (min-width: 1600px){
+        .pc{
+        visibility: visible; } }
+    @media screen and (max-width: 1599px) and (min-width:1025px){
+        html{background-color: purple;}
+        .notebook{
+        visibility: visible; } }
+    @media screen and (max-width: 1024px) and (min-width:768px){
+    html{background-color: red;}
+    .ipad{
+    visibility: visible; } }
+    @media screen and (max-width: 767px){
+    html{background-color: skyblue;}
+    .small{
+    visibility: visible; } }
+
+
+    </style>
+</head>
+<body>
+
+    <h2>여러 화면 크기로 구경해봐요!</h2>
+<div class="texts">
+    <ul>
+        <li class="pc">일반 pc</li>
+        <li class="notebook">노트북</li>
+        <li class="ipad">아이패드</li>
+        <li class="small">작은 거</li>
+    <ul>
+</div>
+</body>
+</html>
