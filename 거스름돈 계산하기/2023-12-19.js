@@ -16,8 +16,8 @@
 
 function question(n, w) {
     // 여기에서 코드 작성해주세요!
-    let result;
-    
+    const cabbage = 3000;
+    let result = w -n*cabbage ;
     return result;
 }
 
