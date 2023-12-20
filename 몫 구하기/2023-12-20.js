@@ -19,11 +19,15 @@
  */
 
 function question(candies, friends) {
-    // 여기에서 코드 작성해주세요!˜
+    // 여기에서 코드 작성해주세요!
+    const result = [ ]; 
+    const distributedCandies = Math.floor(candies / friends);
 
-    let result;
 
-    return result;
+    for (let i = 0; i < friends; i++) {
+        result.push(distributedCandies);
+    }
+    return distributedCandies;
 }
 
 // 여기는 결과값 함수이므로 신경쓰지 않으셔도 됩니다!
