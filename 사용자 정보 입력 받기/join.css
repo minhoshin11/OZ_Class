@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eaeaea;
+}
+
+#container {
+        width: 500px; 
+        height: 700px;
+        padding: 20px;
+        border: 1px solid #8EF78B;
+        border-radius: 20px 20px 20px 20px;
+        background-color: #EBFFEB ;
+        margin-top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 5px 5px 0px #15EF0D,
+                    10px 10px 0px #ce6fed, 
+                    15px 15px 0px #9489dd,
+                    20px 20px 0px #2582aa;
+}
+form {
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+}
+
+.table {
+  width: 80%;
+  margin: auto;
+}
+
+th {
+  width: 40%;
+  text-align: right;
+  padding: 5px;
+}
+
+td {
+  width: 60%;
+  text-align: left;
+  padding-left: 5px;
+}
+
+input, select, textarea {
+  width: 240px;
+  padding: 5px;
+}
+
+input[type="radio"]{
+  width: initial;
+}
+
+input[type="submit"], input[type="reset"]{
+  width: 80px;
+}
+
+textarea {
+  resize: none;
+  width: 240px;
+  min-height: 100px;
+}
+
+.buttons {
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+
+
+
