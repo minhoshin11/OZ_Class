@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel</title>
+    <style>
+        .Image-container{
+            display: flex;
+            width: auto;
+            height: 300px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="Image-container">
+        <img src="apple.jpg" id="imageToShow" alt="Image 1">
+    </div>
+    <button onclick="changeImage()">페이지 보기</button>
+
+    <script>
+        const images = [
+            "apple.jpg",
+            "ocean.jpg",
+            "pumpkin.jpg"
+        ];
+
+        let currentIndex = 0;
+        const imageElement = document.querySelector('#imageToShow');
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            imageElement.src = images[currentIndex];
+            imageElement.alt = `Image ${currentIndex + 1}`;
+        }
+    </script>
+</body>
+</html>

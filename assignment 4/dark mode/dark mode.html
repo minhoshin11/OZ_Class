@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark mode</title>
+    <style>
+    .dark-mode{
+        background-color: black;
+        color: white;
+    }
+
+    </style>
+</head>
+<body>
+    <button onclick="toggleLightMode()">White</button>
+    <button onclick="toggleDarkMode()">Dark</button>
+    
+    <script>
+        function toggleDarkMode() {
+    document.body.classList.add('dark-mode');
+  }
+
+  function toggleLightMode() {
+    document.body.classList.remove('dark-mode');
+  }
+    </script>
+</body>
+</html>
