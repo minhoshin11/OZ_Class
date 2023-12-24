@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4의 배수 5개씩 출력하기</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4의 배수 출력</title>
+</head>
+<body>
+    <h1>4의 배수 5개씩 출력하기</h1>
+    <pre id="output"></pre>
+
+    <script>
+        let num = 100; //100부터 시작하겠습니다~
+        let outputDiv = document.getElementById("output"); //outputDiv님은 문서의 output이란 걸 호출할거에요
+        //getElementId는 "output"을 사용 및 조작하기 위함임.
+        let output = ""; //결과값 도출을 위함
+
+        while (num <= 500) {
+            let count = 0; // 0부터 증가를 시작하겠습니다
+
+            while (count < 5 && num <= 500) {
+                output += num + " "; // "" 붙히는 이유는 한칸씩 띄우기 위해!
+                num += 4;
+                count++; //이건 +, - 같은 연산자이다.
+            }
+
+            output += "\n"; // let output 설정이 결과값이니까 결과값 도출되면 한칸씩 내릴게요.
+        }
+
+        outputDiv.textContent = output;
+    </script>
+</body>
+</html>
+
+</html>

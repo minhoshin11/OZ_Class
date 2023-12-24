@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별트리</title>
+</head>
+<body>
+    
+    <script>
+        function treeOne(height){
+            // 트리의 높이를 설정합니다.
+            let result = '';
+            for (let i = 0; i < height; i++) {
+                let stars = '';
+                for (let j = 0; j <= i * 2; j++) {
+                    stars += '*';
+                }
+                result += stars.padStart(height + i, ' ') + '\n';
+            }   return result;
+        }
+        
+        
+        
+        function treeTwo(height){
+            let result = '';
+            for (let i = height - 1; i >= 0; i--) {
+                let stars = '';
+                for (let j = 0; j <= i * 2; j++) {
+                    stars += '*';
+                }
+                result += stars.padStart(height + i, ' ') + '\n';
+            }return result;
+        }
+        function noneSpace1(height){
+            // 트리의 높이를 설정합니다.
+            let result = '';
+            for (let i = 0; i < height; i++) {
+                let stars = '';
+                for (let j = 0; j <= i * 2; j++) {
+                    stars += '*';
+                }
+                result += stars.padStart(height + i, '') + '\n';
+            }   return result;
+        }
+
+        function noneSpace2(height){
+            let result = '';
+            for (let i = height - 1; i >= 0; i--) {
+                let stars = '';
+                for (let j = 0; j <= i * 2; j++) {
+                    stars += '*';
+                }
+                result += stars.padStart(height + i, '') + '\n';
+            }return result;
+        }
+
+        console.log("첫번째 트리 ");
+        console.log(treeOne(5));
+
+        console.log("두번째 트리");
+        console.log(treeOne(5));
+        console.log(treeTwo(5));
+        console.log("스페이스 없는 트리")
+        console.log(noneSpace1(5));
+        console.log(noneSpace2(5));
+
+
+</script>
+</body>
+</html>
