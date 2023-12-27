@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시간 표기</title>
+
+  <style>
+    .time-info{
+      font-size: 40px; /* 시간 정보 폰트 크기 조절 */
+    }
+  </style>
+  
+</head>
+<body>
+  <div class = "container">
+  <div class="time-info" id="current"></div>
+  <div class="time-info" id="remaining"></div>
+</div>
+  <script>
+    
+    function 현재시간(){
+    const now = new Date();
+    const nowTime = document.getElementById('current')
+    const currentDate = now.toLocaleDateString(); // 현재 날짜
+    const currentTime = now.toLocaleTimeString(); // 현재 시간
+    nowTime.textContent = `현재 :  ${currentDate}  ${currentTime}`;
+   }
+
+   function 남은시간() {
+      const reElement = document.getElementById('remaining');
+      const now = new Date();
+      const thisYear = now.getFullYear();
+      const endOfYear = new Date(thisYear, 11, 31, 23, 59, 59); // 올해의 마지막 날 23시 59분 59초
+
+      const reMilliseconds = endOfYear - now;
+      const days = Math.floor(reMilliseconds / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((reMilliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((reMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((reMilliseconds % (1000 * 60)) / 1000);
+      const milliseconds = String(reMilliseconds % 1000).padStart(3, '0');
+
+      reElement.textContent = `올해의 남은 시간: ${days}일 ${hours}시간 ${minutes}분 ${seconds}초 ${milliseconds}밀리초`;
+    }
+
+
+
+
+   setInterval(function() {
+      현재시간();
+      남은시간();
+    }, 10);
+
+    현재시간();
+    남은시간();
+  </script>
+</body>
+</html>
