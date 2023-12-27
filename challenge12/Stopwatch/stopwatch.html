@@ -4,16 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>스톱워치</title>
+  <style>
+    *{box-sizing: border-box;}
+    html,body{margin: 0; background-color: black;}
+
+    .container{
+      width: 80%; min-width: 320px; max-width: 640px;
+      margin: 10px auto;
+      padding: 5px 0 15px;
+      text-align: center;
+      border: 1px solid white; border-radius: 16px;
+    }
+
+    h2{color:white;
+      font-size: 1.6rem;}
+    h1{color:red;}
+    button{
+      color:darkslategray; background-color: lightgray;
+      font-size: 16px; padding: 6px;
+      width: 100px; border: none; border-radius:  3px;
+      cursor: pointer;
+    }
+    
+    button:active{
+      color: lightgray;
+      background-color: darkslategray;
+    }
+    h1 > span{
+      display: inline-block;
+      width: 40px;
+      
+    }
+  </style>
 </head>
 <body>
-  <h1>⏰스톱워치⏰</h1>
-  <button id="startBtn">시작</button>
-  <button id="stopBtn">중지</button>
-  <button id="resetBtn">초기화</button>
+  <div class="container">
+    <h2>Stop Watch</h2>
+    <h1>
+      <span id="minutes">00 </span> :
+      <span id="seconds">00</span> :
+      <span id="tenMillis"> 00</span> 
+    </h1>
+  <button id="startBtn">Start</button>
+  <button id="stopBtn">Stop</button>
+  <button id="resetBtn">Reset</button>
+</div>
 
-
-  <script>
-    
-  </script>
+  <script src="stopwatch.js"></script>
 </body>
 </html>
