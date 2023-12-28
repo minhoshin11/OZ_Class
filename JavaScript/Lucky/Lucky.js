@@ -25,15 +25,15 @@ function question(n, m) {
   for(let i= 1; i <= 10; i++){
   let lucky = Math.floor(Math.random() * 9) + 1;
 
-if(lucky ===  n){
-  console.log(`${i}회차 행운의 숫자: ${lucky} 당첨!`)
-  총금액 += 당첨금;
-}else{
-  console.log(`${i}회차 행운의 숫자: ${lucky} 낙첨... `)
-} }
+    if(lucky ===  n){
+    console.log(`${i}회차 행운의 숫자: ${lucky} 당첨!`)
+    총금액 += 당첨금;
+    }else{
+    console.log(`${i}회차 행운의 숫자: ${lucky} 낙첨... `)
+    } }
 
-console.log(`당첨금은 ${총금액}원 입니다.`);
-return 총금액;
+    console.log(`당첨금은 ${총금액}원 입니다.`);
+    return 총금액;
 }
 
 question(4, 10000);
