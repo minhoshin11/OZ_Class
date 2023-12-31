@@ -8,10 +8,22 @@
 <body>
   <h1>가위바위보 게임</h1>
   <div>가위,바위,보 중 하나를 입력하세요.</div>
-  <form action="">
-  <input type="text" id="input">
-  <button>결과확인 ddddd</button>
+  <input>
+  <button class="submit">결과확인</button>
+  <p>당신의 선택: <span class="userSelect"></span></p>
+  <p>컴퓨터의 선택: <span class="comSelect"></span></p>
+  <p>결과: <span class="result"></span></p>
 
+
+  <script>
+  const input = document.querySelector('.input')
+  const submitBtn = document.querySelector('.submit')
+  const userSelect = document.querySelector('.userSelect')
+  const result = document.querySelector('.result')
+  const game = ['가위', '바위', '보']
+
+
+  </script>
 </form>
 </body>
 </html>
