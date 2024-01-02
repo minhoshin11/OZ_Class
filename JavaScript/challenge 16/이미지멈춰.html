@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 멈춰</title>
+  <style>
+    body{
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #myImage{
+      width: 300px;
+      height: 200px;
+    }
+    #toggleButton{
+      width: 60px;
+      height: auto;
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <img src="../challenge 16/이미지짤1.jpeg" alt="이미지" id="myImage">
+  <button id="toggleButton">멈춰</button>
+
+  <script>
+    const image = document.getElementById('myImage');
+    const toggleButton = document.getElementById('toggleButton');
+    let intervalId = null;
+    
+    const imagePaths = ['../challenge 16/이미지짤2.jpeg' , '../challenge 16/이미지짤3.jpeg'];
+    let currentImageIndex = 0;
+
+    function playImage(){
+      intervalId = setInterval(changeImage, 1000); //1초마다 이미지 변경
+    }
+    function changeImage(){
+      image.src = imagePaths[currentImageIndex];
+      currentImageIndex = (currentImageIndex + 1) % imagePaths.length;
+    }
+toggleButton.addEventListener('click',function(){
+  if(intervalId) {
+    clearInterval(intervalId);
+    toggleButton.textContent = '재생'
+    intervalId = null;
+  }
+  else{
+    playImage();
+    toggleButton.textContent = '멈춰'
+  }
+})
+
+playImage();
+  </script>
+</body>
+</html>
