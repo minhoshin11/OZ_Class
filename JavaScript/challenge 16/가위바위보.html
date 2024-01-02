@@ -8,7 +8,7 @@
 <body>
   <h1>가위바위보 게임</h1>
   <div>가위,바위,보 중 하나를 입력하세요.</div>
-  <input>
+  <input class="userInput">
   <button class="submit">결과확인</button>
   <p>당신의 선택: <span class="userSelect"></span></p>
   <p>컴퓨터의 선택: <span class="comSelect"></span></p>
@@ -16,11 +16,39 @@
 
 
   <script>
-  const input = document.querySelector('.input')
+  const input = document.querySelector('.userInput')
   const submitBtn = document.querySelector('.submit')
   const userSelect = document.querySelector('.userSelect')
+  const comSelect = document.querySelector('.comSelect');
   const result = document.querySelector('.result')
   const game = ['가위', '바위', '보']
+
+submitBtn.addEventListener('click',function(){
+    const userChoice = input.value;
+    
+  if(!game.includes(userChoice)){
+    result.textContent = '유효한 값을 입력하세요: 가위,바위,보 ';
+    return;
+    }
+    const randomIndex = Math.floor(Math.random() * 3);
+    const comChoice = game[randomIndex];
+
+  userSelect.textContent = userChoice;
+  comSelect.textContent = comChoice;
+
+
+  if(userChoice === comChoice) {
+  result.textContent = '무승부!' ;
+  }else if(
+  (userChoice === '가위' && comChoice === '보') ||
+  (userChoice === '바위' && comChoice === '가위') ||
+  (userChoice === '보' && comChoice === '바위')
+  ){
+    result.textContent = '당신의 승리';
+  } else{
+    result.textContent = '컴퓨터의 승리!';
+  }
+})
 
 
   </script>
