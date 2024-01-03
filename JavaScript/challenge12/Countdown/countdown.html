@@ -25,7 +25,7 @@
     const currentDate = now.toLocaleDateString(); // 현재 날짜
     const currentTime = now.toLocaleTimeString(); // 현재 시간
     nowTime.textContent = `현재 :  ${currentDate}  ${currentTime}`;
-   }
+    }
 
    function 남은시간() {
       const reElement = document.getElementById('remaining');
@@ -42,9 +42,6 @@
 
       reElement.textContent = `올해의 남은 시간: ${days}일 ${hours}시간 ${minutes}분 ${seconds}초 ${milliseconds}밀리초`;
     }
-
-
-
 
    setInterval(function() {
       현재시간();

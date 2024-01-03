@@ -1,6 +1,7 @@
 let minutes = 0;
 let seconds = 0;
 let tenMillis = 0;
+
 const appendTens = document.getElementById("tenMillis");
 const appendSeconds = document.getElementById("seconds");
 const appendMinutes = document.getElementById("minutes");
@@ -9,6 +10,7 @@ const buttonStop = document.getElementById("stopBtn");
 const buttonReset = document.getElementById("resetBtn");
 let intervalId;
 
+//let intervalId;라인은 나중에 setInterval에 의해 반환되는 ID를 저장하기 위한 변수를 선언합니다.
 buttonStart.onclick = function(){
   clearInterval(intervalId)
   intervalId = setInterval(operateTimer, 10)
