@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시간 표기</title>
+
+  <style>
+    .time-info{
+      font-size: 40px; /* 시간 정보 폰트 크기 조절 */
+    }
+  </style>
+  
+</head>
+<body>
+  <div class = "container">
+  <div class="time-info" id="current"></div>
+  <div class="time-info" id="remaining"></div>
+</div>
+
+  <script>
+
+    function 현재시간(){
+    const now = new Date(); // now에 지금시간을 받겠다. new Date() 이놈은 자바스크립트 내장객체
+    const nowTime = document.getElementById('current') // id가 current의 있는 놈을 작업하겠다.
+    const currentDate = now.toLocaleDateString(); // 현재 날짜
+    const currentTime = now.toLocaleTimeString(); // 현재 시간
+    nowTime.textContent = `현재 :  ${currentDate}  ${currentTime}`;  //nowTime(id:current)을 텍스트로 표현하겠다.
+    }
+
+   function 남은시간() {
+      const reElement = document.getElementById('remaining'); // id가 remaining인 놈을 작업하겠다.
+      const now = new Date(); //now에 지금 시간을 받겠다.
+      const thisYear = now.getFullYear(); //선언한 'now'에서 현재연도를 가져와 'thisYear'에 저장하겠다. 이거 없애면 2024만 써야하는데 그러면 내년엔 이코드 못씀
+      const endOfYear = new Date(thisYear, 11, 31, 23, 59, 59); // 올해의 마지막 날 23시 59분 59초 , 월은 0부터 시작이라 11이면 12월
+
+      const reMilliseconds = endOfYear - now; // 남은시간
+      const days = Math.floor(reMilliseconds / (1000 * 60 * 60 * 24)); //밀리세컨단위가 1000이라 이거 곱해야 1초가 됨.
+      //남은시간을 1일로 나누고 , 나머지(남은 일수)을 보여주는 코드임 Math.floor로 소수점 제거
+      const hours = Math.floor((reMilliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); 
+      //리밀리세컨 나누기 1일 한 나머지값 >> 나누기 1시간  = 시간단위로 표기하겠다. 겉에 (Math.floor) 넣어서 이상한 숫자들 사라짐.
+      const minutes = Math.floor((reMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
+      //리밀리세컨 나누기 1시간 나머지값 >> 나누기 1분 = 분 단위로 표기하겠따.
+      const seconds = Math.floor((reMilliseconds % (1000 * 60)) / 1000); 
+      //마찬가지다.
+      const milliseconds = String(reMilliseconds % 1000).padStart(3, '0');
+      //.padstart(3,'0') 3자리로 만든 것임. 두자리일 경우 앞에 '0'을 채워넣음.
+      reElement.textContent = `올해의 남은 시간: ${days}일 ${hours}시간 ${minutes}분 ${seconds}초 ${milliseconds} 밀리초`;
+    } //id값 remaining을 텍스트콘텐츠로 표시하겠습니다~
+
+   setInterval(function() {
+      현재시간();
+      남은시간();
+    }, 10);  //함수 현재시간,남은시간을 10ms마다 초기화해주세요
+  </script>
+</body>
+</html>
