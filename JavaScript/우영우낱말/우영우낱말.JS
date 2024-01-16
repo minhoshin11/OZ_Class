@@ -20,6 +20,7 @@
  * 👉 예시 결과
  * "A man, a plan, a canal: Panama" // true
  * "race a car" // false
+ * 이거 다시 와서 보자
  */
 
 function question(str) {
