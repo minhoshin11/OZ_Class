@@ -36,6 +36,6 @@ function Test(question, conditions, results) {
           return;
       }
   }
-
+//주석 놀이
   console.log('테스트에 통과하셨습니다!');
 }
