@@ -1,0 +1,145 @@
+.Template {
+  padding: 20px;
+  max-height: 100vh;
+}
+.title{
+  width : 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight : bold;
+  color : #6c567b;
+}
+/* 여기까지 Template */
+
+.TodoList{
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+
+/* 여기까지 TodoList */
+
+.TodoItem{
+  margin-left: auto;
+  margin-right:  auto;
+  
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px 1px #f67280;
+  padding : 1rem;
+  display: flex;
+  align-items: center;
+}
+/* 여기까지 TodoItem */
+
+.TodoItem + .TodoItem {
+  margin-top: 15px;
+}
+
+.content{
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.content svg{
+  font-size : 1.5rem;
+  color : #f67280;
+}
+.content .text{
+  margin-left: 0.5rem;
+  flex : 1; 
+}
+/* checkbox icon */
+
+.checked .text {
+  color : #6c567b;
+  text-decoration: line-through;
+  cursor: pointer;
+  opacity: 0.6;
+}
+/* 체크되면 줄 찍찍 */
+
+.add-todo-button{
+  position: fixed;
+  right: -5px;
+  bottom: 0;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  font-size: 5rem;
+  color : #f67280;
+}
+/* 우측하단에 + 버튼 */
+
+.background{
+  position: fixed;
+  z-index: 980;
+  top : 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6c567b;
+  opacity: 0.8;
+}
+/* 諛깃렇�쇱슫�� �뚮��� �� 釉붾씪�몃뵫 泥섎━ */
+
+form{
+  margin: 0; 
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 990;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px 1px #f67280;
+  background: white;
+}
+/* +버튼 눌렀을 때 박스 */
+
+form >  input {
+  background: none;
+  outline: none;
+  border : none;
+  border-bottom:  1px solid #f67280;
+  padding: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+form > button {
+  padding-top: 20px;
+  background: none;
+  outline: none;
+  border : none;
+  color : #f67280;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size : 1.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.1s background ease-in;
+}
+
+.rewrite > svg {
+  padding-top : 20px;
+  color : #f67280;
+  padding-left:  1rem;
+  padding-right: 1rem;
+  font-size : 1.5rem;
+}
