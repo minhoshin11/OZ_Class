@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { MdAddCircle } from 'react-icons/md';
 import { TiPencil, TiTrash } from 'react-icons/ti';
 
-function TodoInsert({ onInsertToggle, onInsertTodo , selectedTodo , onRemove , onUpdate}) {
-  const [value, setValue] = useState("");
+//Todo 기입하는 것들
 
-  const onChange = (e) => {
+function TodoInsert({ onInsertToggle, onInsertTodo , selectedTodo , onRemove , onUpdate}) {
+    const [value, setValue] = useState("");
+    const onChange = (e) => {
+    
     setValue(e.target.value);
   }
-
+//e.preventDefault( : 이벤트버블링(상위요소까지 클릭)을 막는 것
   const onSubmit = (e) => {
     e.preventDefault();
     onInsertTodo(value);

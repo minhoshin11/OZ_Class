@@ -1,6 +1,9 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 
+//할일의 목록들을 담고 있는 TodoList
+//
+
 function TodoList({todos, onCheckToggle, onInsertToggle,setSelectedTodo}) {
   return (
     <div className='TodoList'>
