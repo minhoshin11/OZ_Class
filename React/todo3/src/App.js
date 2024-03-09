@@ -32,8 +32,7 @@ function App() {
     }
   ]);
 
-// onInsertToggle :  할일 추가 폼의 토글상태를 변경
-//ex) 할일1 눌렀을 때
+// onInsertToggle :  할일 입력 모달창 토글
   const onInsertToggle = () => {
     if(selectedTodo){
       setSelectedTodo(null);
@@ -100,26 +99,31 @@ function App() {
   return (
     <div className="App">
       <Template todoLength={todos.length}>
-        <TodoList
+         {/* todo.length -> 오늘의 할일 (todo.length)  */}
+      <TodoList  
         todos={todos} //할일 목록 배열 state
         onCheckToggle={onCheckToggle} // 체크박스 상태 변경
-        onInsertToggle={onInsertToggle} // 할일 입력 모달창 ,
+        onInsertToggle={onInsertToggle} // 할일 입력 모달창 상태,
         setSelectedTodo={setSelectedTodo}  //현재 선택된 할일을 나타냄.
         />
+
         <div className='add-todo-button' onClick={onInsertToggle}>
-          {/* +버튼입니다 */}
+          {/* 플러스 버튼입니다 */}
           <MdAddCircle/>
         </div>
     {insertToggle && 
+    //insertToggle && : 조건부 렌더링 -> 참일 때 밑에 꺼 보여줌
+    //insertToggle이 트루이면 TodoInsert 컴포넌트 보여주세요~
       <TodoInsert
-        selectedTodo={selectedTodo}
-        onInsertToggle={onInsertToggle}
-        onInsertTodo={onInsertTodo}
-        onRemove={onRemove}
-        onUpdate={onUpdate} >
-      </TodoInsert>
+        selectedTodo={selectedTodo} //현재 선택한 할일
+        onInsertToggle={onInsertToggle} //할일 입력 모달창 토글
+        onInsertTodo={onInsertTodo} //새로운 할일 추가하는 함수
+        onRemove={onRemove} //삭제하는 함수
+        onUpdate={onUpdate} //수정하는 함수
+      />
     }
       </Template>
+
     </div>
   );
 }
